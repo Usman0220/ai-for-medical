@@ -1,31 +1,14 @@
-# Phase 1 — ML Foundations (Weeks 1–3)
+# Phase 1 — How LLMs work (Weeks 1–2)
 
-## Week 1 — How learning works
+Understand the tool before you build with it. Intuition first, maths only where it helps.
 
-- [ ] Supervised vs unsupervised vs reinforcement — with medical examples (diagnosis = supervised, patient clustering = unsupervised)
-- [ ] Train / validation / test split — and why you must split by PATIENT, never by row (same patient in train + test = leakage)
-- [ ] Overfitting — the "memorised past papers but can't answer a new question" problem
-- [ ] Evaluation you already know: confusion matrix, sensitivity, specificity, PPV, NPV, ROC curve, AUC
-- [ ] Exercise: predict diabetes from the Pima dataset — report sensitivity + specificity, not just accuracy
+- [ ] Tokens & tokenisation — count tokens in a First Aid paragraph, see what changes the count (a token is roughly 3/4 of a word; medical terms tokenise unpredictably)
+- [ ] Transformers & attention, intuition only — what attention actually does: every word looks at the other words and decides what matters. No full maths needed to start.
+- [ ] Prompting — take one medical question, ask it in 3 prompt styles (plain, role + steps, few-shot with an example), compare each answer against First Aid
+- [ ] Context windows & hallucination — why a confident wrong answer happens: the model predicts likely text, it does not look things up. A confident tone is not evidence.
 
-## Week 2 — The classic algorithms
+> 💡 Doctor's lesson: an LLM is a fluent pattern-matcher, not a colleague. It can be wrong in perfect sentences — that is why Phases 2–3 (grounding + evaluation) exist.
 
-- [ ] Linear regression → logistic regression (yes/no diagnosis as a probability)
-- [ ] Decision trees → random forest → gradient boosting (the workhorses of tabular medical data)
-- [ ] k-NN and SVM — when they help, when they don't
-- [ ] Cross-validation + hyperparameter tuning (GridSearchCV)
-- [ ] Exercise: heart-disease prediction (UCI) — compare logistic regression vs random forest vs XGBoost, same test set
+## Background (optional)
 
-## Week 3 — Unsupervised + the maths that matters
-
-- [ ] Clustering (k-means) + dimensionality reduction (PCA) — e.g. grouping patients by lab patterns
-- [ ] Maths, just-in-time: vectors & matrices (what a dataset IS), gradients (how models learn), Bayes' rule (why a positive test isn't always disease)
-- [ ] Class imbalance: why 95% accuracy can be a lie when only 5% of patients have the disease — precision, recall, F1, PR curves
-- [ ] Exercise: cluster patients, then explain the clusters in plain clinical words
-
-## Main resources
-
-- **Andrew Ng — Machine Learning Specialization** (Coursera) — the standard starting course, gentle maths. https://www.coursera.org/specializations/machine-learning-introduction
-- **StatQuest** (YouTube) — best intuition-first explanations of every algorithm. https://www.youtube.com/@statquest
-- **Book:** Aurélien Géron, *Hands-On Machine Learning with Scikit-Learn, Keras & TensorFlow* — the practical bible, keep it beside you all 8 weeks.
-- **Book (short):** Andriy Burkov, *The Hundred-Page Machine Learning Book* — the whole field in one sitting.
+- DeepLearning.AI AI for Medicine specialisation — partly done already; fits here as background, not a prerequisite.

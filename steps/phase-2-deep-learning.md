@@ -1,23 +1,10 @@
-# Phase 2 — Deep Learning & Medical Data (Weeks 4–5)
+# Phase 2 — Building with LLMs (Weeks 3–4)
 
-## Week 4 — Neural networks
+Start building. Every step uses your own medical material.
 
-- [ ] Perceptron → MLP → backpropagation — watch 3Blue1Brown's neural network series first (visual, no equations needed to start)
-- [ ] PyTorch basics: tensors, autograd, training loop — build a tiny network that classifies tabular data
-- [ ] Activation functions, loss functions, optimizers (Adam), learning rate — what each knob actually does
+- [ ] First API call — ask an LLM a medical question from Python, print the answer
+- [ ] Structured output — force JSON answers (e.g. diagnosis + differentials + red flags) so the output is machine-readable, not prose to parse
+- [ ] Embeddings + RAG — turn your own prep notes into searchable chunks, retrieve the relevant ones, and make the model answer with citations to the note it used
+- [ ] Exercise — RAG over prep notes: 10 questions, check every cited answer against the note. A wrong citation is a fail, even if the answer looks right.
 
-## Week 5 — Images & signals (the medical part)
-
-- [ ] CNNs: convolution, pooling — why they work on X-rays and why they work on ECG traces too (1D convolution)
-- [ ] Data augmentation for medical images + transfer learning (start from a pre-trained model, fine-tune on medical data)
-- [ ] Know your datasets: PTB-XL (ECG), MIT-BIH (arrhythmia), NIH ChestX-ray14, CheXpert, MIMIC (needs credentialing — later)
-- [ ] Exercise: train a CNN to spot pneumonia on a small chest X-ray set — then look at what it gets WRONG, like a clinician reviewing a colleague
-
-> 💡 Doctor's lesson: a model that is 95% accurate but can't explain itself, fails on a different hospital's X-rays, or is confidently wrong on rare cases is not a clinical tool yet. Evaluation, calibration and bias matter more than the headline number.
-
-## Main resources
-
-- **3Blue1Brown — Neural Networks** (YouTube playlist) https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi
-- **fast.ai — Practical Deep Learning** (free) https://www.fast.ai — build first, theory second
-- **PyTorch tutorials** https://pytorch.org/tutorials
-- **PhysioNet** (medical datasets) https://physionet.org
+> 💡 The knowledge base is the point: your gynae/obs banks, your bits files, your error log — the model is only as good as what it can retrieve.
